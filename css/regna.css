@@ -1,0 +1,899 @@
+* {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+/*OVO MI SKLANJA PLAVI BORDER OKO DUGMETA!!!*/
+*:focus {outline:none !important}   
+
+/*horizontal menu on desktop*/
+
+
+#menu-block ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 12px 32px 0 0;
+    float: right;
+    transition: 4s;
+}
+
+#menu-block ul li {
+    float: left;
+    text-align: left;
+    padding: 0 8px;
+    position: relative;
+    transition: all 0.5s;
+    z-index: 1000;
+}
+
+#menu-block ul li a {
+    padding: 0 8px 10px 8px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 13px;
+    outline: none;
+}
+
+
+#menu-block ul li ul {
+    display: none;
+    transition: all 4s;
+    z-index: 2000;
+}
+
+#menu-block ul li ul {
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    width: 200px;
+    background: white;
+    transition: all 4s;
+}
+
+#menu-block ul li ul li {
+    width: 100%;
+    border-bottom: none;
+    padding: 10px;
+}
+
+#menu-block ul li ul li a {
+    padding: 10px;
+    color: #333;
+    transition: 0.3s;
+    display: block;
+    font-size: 13px;
+    text-transform: none;
+}
+
+#menu-block ul li ul li a {
+    padding: 0;
+}
+
+#menu-block ul li ul li ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+#menu-block ul>li>ul>li>ul>li {
+    width: 150px;
+}
+
+#menu-block ul li ul li:hover {
+    background: #2dc997;
+}
+
+#menu-block ul li:hover>ul {
+    display: block;
+    transition: all 4s;
+}
+
+#menu-block ul li div {
+    position: absolute;
+    height: 1px;
+    padding: 0;
+    background: #2dc997;
+    top: 25px;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: all 0.5s;
+}
+
+#menu-block ul li:hover div {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    border-bottom: 2px solid #2dc997;
+}
+
+#menu-block i.fa-chevron-down {
+    color: white;
+}
+
+/*vertical menu on mob(ovo mi je css za meni na mob-u)*/
+
+#menu-block-mob ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 12px 32px 0 0;
+    transition: 4s;
+
+}
+
+#menu-block-mob ul li {
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding: 0 5px;
+    position: relative;
+    transition: all 5s;
+    z-index: 1000;
+}
+
+#menu-block-mob ul li a {
+    padding: 0 8px 10px 8px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    outline: none;
+}
+
+#menu-block-mob ul li ul {
+    display: none;
+    transition: all 4s;
+}
+
+#menu-block-mob ul li ul {
+    position: relative;
+    width: 100%;
+    background: white;
+    transition: all 4s;
+}
+
+#menu-block-mob ul li ul li {
+    width: 100%;
+    border-bottom: none;
+    padding: 10px;
+}
+
+#menu-block-mob ul li ul li a {
+    padding: 10px;
+    color: white;
+    transition: 0.3s;
+    display: block;
+    font-size: 12px;
+    text-transform: none;
+}
+
+#menu-block-mob ul li ul li a {
+    padding: 0;
+}
+
+#menu-block-mob ul li ul li ul {
+    position: relative;
+}
+
+#menu-block-mob ul>li>ul>li>ul>li {
+    width: 100%;
+}
+
+#menu-block-mob ul li ul li:hover>a {
+    color: #1dc8cd;
+}
+
+#menu-block-mob ul li:hover>ul {
+    display: block;
+    transition: all 4s;
+}
+
+#menu-block-mob i.fa-chevron-down {
+    color: white;
+}
+
+.btn {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 50px;
+    border: 2px solid white;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.active+.block-100 {
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    border-bottom: 5px solid #2dc997;
+}
+
+.btn-transparent {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-transparent:hover {
+    background: #2dc997;
+    border: none;
+
+}
+
+#menu-mob-sandwich {
+    width: 50px;
+    float: left;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-mob-sandwich div {
+    width: 20px;
+    height: 3px;
+    background: white;
+    margin: 4px auto;
+    z-index: 0;
+}
+
+#mob-mask-block {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+#close-mask-block {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    color: white;
+    display: none;
+}
+
+#menu-block-mob {
+    width: 30%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    
+}
+
+
+.greenUnderline {
+    width: 100px;
+    border: 1px solid green;
+    margin: 10px auto;
+}
+
+
+
+#headerAll {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/hero-bg.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.btn1 {
+    border: 2px solid #fff;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.116);
+    color: #fff;
+    width: 165px;
+    height: 45px;
+    margin-top: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+   
+}
+
+.btn1:hover {
+    background: #2dc997;
+    border:none;
+    transition: 1s;
+}
+
+#headerText {
+    margin-top: 28vh;
+}
+#headerText a{
+    text-decoration: none;
+    color: #fff;
+}
+#headerText h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 30px 0 10px 0;
+}
+
+#headerText h3 {
+    font-size: 25px;
+    color:#fff;
+    font-weight: 400;
+}
+
+#upBlack {
+z-index: 1;
+transition: all 1s;
+padding: 10px;
+}
+
+#groupTeam {
+    height: 500px;
+    background: url("../img/about-img.jpg") center top no-repeat;
+}
+
+.groupText h4 {
+    color: #333;
+    text-align: left;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.groupText p{
+color: #333;
+line-height: 24px;
+font-size: 14px;
+text-align: left;
+}
+#textUp h1 {
+    color: #333;
+    text-align: left;
+    font-size: 32px;
+    line-height: 26px;
+}
+#textUp a{
+    text-decoration: none;
+    color: #333;
+    text-align: left;
+    font-size: 32px;
+    line-height: 26px;
+}
+
+#textUp p {
+    padding-top: 25px;
+    color: #333;
+    text-align: left;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+/*tri slicice sa krugovima*/
+
+i.fa-bar-chart,
+i.fa-photo,
+i.fa-shopping-bag {
+    padding: 15px;
+    color: #2dc997;
+    font-size: 30px;
+    border: 2px solid #2dc997;
+    border-radius: 50%;
+    float: left;
+}
+
+/*END - tri slicice sa krugovima*/
+
+.blockIcons h1 {
+    font-size: 18px;
+
+}
+
+.blockIcons p {
+    font-size: 14px;
+}
+
+.blockIcons a {
+    text-decoration: none;
+    color: #111;
+}
+
+.blockIcons {
+    padding: 50px 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    height: 200px;
+    position: relative;
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+}
+.relative{
+position: relative;
+
+}
+.blockIcons i {
+    border-radius: 50%;
+    position: absolute;
+    top: -36px;
+    left: calc(50% - 36px);
+    display: inline-block;
+    border: 2px solid #fff;
+    background: #2dc997;
+    padding: 15px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.blockIcons:hover i {
+    color: #2dc997;
+    transition: 0.3s;
+    background: #fff;
+    border: 2px solid #2dc997;
+}
+
+/*DROPS SECTION*/
+#drops {
+    height: 250px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/call-to-action-bg.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+#dropsAll h1 {
+    text-align: left;
+    color: #fff;
+    font-size: 28px;
+}
+
+#dropsAll p {
+    text-align: left;
+    color: #fff;
+    font-size: 15px;
+}
+
+/*FACTS SECTION*/
+#factsBg {
+    height: 400px;
+    background: #f7f7f7;
+    margin-top: 100px;
+    color: #666666;
+}
+
+#facts h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    color: #111;
+}
+
+#facts h3 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #999;
+}
+
+.leftIn {
+    display: none;
+    position: absolute;
+    left: -20%;
+}
+
+.rightIn {
+    display: none;
+    position: absolute;
+    right: -20%;
+}
+
+#tabs .number-up .number-down {
+    min-height: 200px;
+}
+
+.number-up .number-down {
+    font-size: 50px;
+    font-family: "Arial Narrow";
+    color: #2dc997
+}
+
+#numbers p {
+    font-size: 14px;
+
+}
+
+.btnCube {
+    width: 65px;
+    height: 40px;
+    background: #fff;
+    color: #666666;
+    border-radius: 4px;
+    border-color: #fff;
+}
+
+.btnCube:hover {
+    background: #2dc997;
+    color: #fff;
+    transition: 1s;
+}
+
+.activePortfolio {
+    background: #2dc997;
+    color: #fff;
+}
+
+
+#portfolioBg{
+background: #f7f7f7
+}
+#contactBlock{
+    background: #f7f7f7;
+}
+#portfolio h1,  {
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    color: #111;
+}
+#portfolio h1 a{
+text-decoration: none;
+font-size: 32px;
+margin-bottom: 5px;
+margin-top: 50px;
+color: #111;
+}
+#portfolio h3{
+    font-weight: 400;
+    font-size: 16px;
+    color: #999;
+}
+
+#services a{
+    text-decoration: none;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    color: black;
+}
+#services h3{
+font-weight: 400;
+    font-size: 16px;
+    color: #999;
+}
+#services p, #contactBlock p{
+    color: #999;
+}
+#team h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    color: #111;
+}
+#team a{
+    text-decoration: none;
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    color: #111;
+}
+#team h3{
+font-weight: 400;
+    font-size: 16px;
+    color: #999;
+}
+#contact{
+background: #f7f7f7;
+}
+#contact h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    color: #111;
+}
+#contactBlock a{
+    text-decoration: none;
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    color: #111;
+}
+#contact h3{
+font-weight: 400;
+    font-size: 16px;
+    color: #999;
+}
+.member h2{
+font-weight: 700;
+margin-bottom: 2px;
+font-size: 18px;
+color: #666666;
+}
+
+.member p{
+font-style: italic;
+display: block;
+font-size: 13px;
+color: #666666;
+}
+
+.member i{
+font-size: 20px;
+margin: 0 2px;
+color: #b3b3b3;
+padding-top: 10px;
+}
+.member i:hover{
+color: #2dc997;
+}
+
+#contactForm i{
+font-size: 32px;
+color: #2dc997;
+float: left;
+text-align: left;
+}
+
+#contactForm p{
+
+text-align: left;
+line-height: 22px;
+font-size: 14px;
+color: black;
+}
+
+
+
+#contactIcons i{
+color: #fff;
+padding: 7px;
+font-size: 20px;
+
+
+}
+#contactIcons i:hover{
+border:1px solid #2dc997;
+color: #fff;
+background: #2dc997;
+font-size: 20px;
+}
+#contactIcons i{
+background: #333;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+padding: 11px;
+
+}
+
+.formField{
+width:100%;
+padding: 7px;
+border: 1px solid #ced4da;
+margin-bottom: 15px;
+font-size: 14px;
+color: #495057;
+
+}
+
+#btnSend{
+width: 155px;
+height: 45px;
+border: 1px solid #2dc997;
+background: #2dc997;
+color: #fff;
+font-size: 16px;
+
+}
+
+.footer{
+background: #343b40;
+color: #fff;
+font-size: 14px;
+}
+.footer h5{
+font-weight: 100;
+font-size:12px;
+}
+.footer a{
+text-decoration: none;
+color: #2dc997;
+}
+
+/*sve klase jumpIn imaju position absolute, gazim float i visibility hidden, moze i opcija sa display none*/
+.jumpIn {
+    position: absolute;
+    float: none;
+    transition: all 1s;
+    visibility: hidden;
+}
+
+/*pored klase jumpIn elementu je nepohodno dodati i klasu sa koje strane hocemo da se element pojavljuje
+inicijalno postavljam -100% kako bi se elementi pripremili za pojavljivanje
+*/
+.fromLeft {
+    left:-100%;
+}
+
+.fromRight {
+    right:-100%;
+}
+
+.fromBottom {
+    bottom:-100%;
+}
+
+.fromTop {
+    top:-100%;
+}
+
+.sectionBlock {
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.cube  {
+    width: 70px;
+    height: 40px;
+    background: #fff;
+    color: #666666;
+    border-radius: 4px;
+    border-color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+    
+    
+}
+.itemsShowClick{
+   
+    text-decoration: none;
+    color: #666666;
+    font-size: 12px;
+    
+}
+.cube:hover {
+    background: #2dc997;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.imgBlock{
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+
+.imgHoverBlock {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #2dc997;
+    text-align: left;
+    height: 0;
+    padding: 0;
+    transition: all 0.5s;
+    visibility: hidden;
+    color:white;
+    font-size: 13px;
+    
+    color: #fff;
+}
+
+.items:hover .imgHoverBlock {
+    padding: 20px;
+    height: auto;
+    visibility: visible;
+}
+
+.items {
+    position: relative;
+    transition: all 0.5s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.items img {
+    display: block;
+}
+
+
+
+/*responsive css (ovde definisem prikaz za druge uredjaje, mob, tablet,...)*/
+
+@media screen and (max-width:1200px) {
+
+    #menu-block ul {
+        display: none;
+    }
+
+    #menu-mob-sandwich {
+        display: block;
+        float: right;
+    }
+
+
+}
+
+@media screen and (max-width:760px) {
+
+    #headerIntroBlock {
+        margin-top: 20vh;
+    }
+
+    #menu-block-mob {
+        width: 60%;
+    }
+    #headerAll, #content, #factsBg, #facts, #services, #drops,  #team, #contactForm  {
+        
+        width: 100%;
+    }
+    .member, .footer{
+        width: 100%;
+    }
+    .forResponsive{
+        width: 100%;
+        height: 100%;
+        
+    }
+    #factsBg, #drops{
+        height: 100%;
+    }
+    #dropsAll h1 {
+        text-align: center;
+       
+    }
+    #dropsAll p {
+        text-align: center;
+       
+    }
+    #dropsR{
+        width: 100%;
+    }
+    #headerText h1{
+        font-size: 28px;
+    }
+  
+    #headerText h3{
+        font-size: 18px;
+    }
+     .number-up{
+        width: 50%;
+    }
+    .blockIcons{
+        width: 100%;
+        height: 100%;
+        
+    }
+    .adressForm{
+        width: 100%;
+        text-align: left;
+        
+    }
+    #resForm{
+        width: 100%;
+    }
+    .jedan, .dva{
+        width: 100%;
+    }
+    .cubes{
+        width: 100%;
+    }
+    .items{
+        width: 100%;
+    }
+}
